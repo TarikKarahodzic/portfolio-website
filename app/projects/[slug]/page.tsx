@@ -2,18 +2,17 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { projects } from "../../../data/projects";
 
-type Props = {
-  params: {
-    slug: string;
-  }
-}
-
+// Static params are still sync
 export async function generateStaticParams() {
   return projects.map(p => ({ slug: p.slug }));
 }
 
-export function generateMetadata({ params }: Props ) {
-  const project = projects.find(p => p.slug === params.slug);
+// 👇 params is a Promise here — await it
+export async function generateMetadata(
+  { params }: { params: Promise<{ slug: string }> }
+) {
+  const { slug } = await params;
+  const project = projects.find(p => p.slug === slug);
   if (!project) return {};
   return {
     title: `${project.title} | Projects`,
@@ -21,8 +20,12 @@ export function generateMetadata({ params }: Props ) {
   };
 }
 
-export default function ProjectDetail({ params }: Props) {
-  const project = projects.find(p => p.slug === params.slug);
+// 👇 params is a Promise here — await it
+export default async function Page(
+  { params }: { params: Promise<{ slug: string }> }
+) {
+  const { slug } = await params;
+  const project = projects.find(p => p.slug === slug);
   if (!project) return notFound();
 
   return (
@@ -37,16 +40,22 @@ export default function ProjectDetail({ params }: Props) {
 
         <div className="mt-6 flex flex-wrap gap-2">
           {project.tags.map((t) => (
-            <span key={t} className="text-xs px-2 py-1 rounded bg-gray-100 dark:bg-gray-800">{t}</span>
+            <span key={t} className="text-xs px-2 py-1 rounded bg-gray-100 dark:bg-gray-800">
+              {t}
+            </span>
           ))}
         </div>
 
         <div className="mt-6 flex gap-3">
           {project.links?.demo && (
-            <a className="px-4 py-2 rounded bg-blue-600 text-white" href={project.links.demo} target="_blank">Live Demo</a>
+            <a className="px-4 py-2 rounded bg-blue-600 text-white" href={project.links.demo} target="_blank">
+              Live Demo
+            </a>
           )}
           {project.links?.repo && (
-            <a className="px-4 py-2 rounded border border-gray-300 dark:border-gray-700" href={project.links.repo} target="_blank">Source</a>
+            <a className="px-4 py-2 rounded border border-gray-300 dark:border-gray-700" href={project.links.repo} target="_blank">
+              Source
+            </a>
           )}
         </div>
       </div>
