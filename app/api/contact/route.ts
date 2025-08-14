@@ -21,7 +21,6 @@ export async function POST(request: Request) {
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
-    // Don't crash builds or runtime; return a clear error
     return NextResponse.json(
       { success: false, error: "Email service not configured" },
       { status: 500 }
