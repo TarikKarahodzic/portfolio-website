@@ -1,5 +1,6 @@
 'use client';
 
+import Link from "next/link";
 import React from "react";
 import { FaReact, FaWordpress, FaGithub } from "react-icons/fa";
 import { SiNextdotjs, SiTailwindcss, SiSupabase, SiTypescript, SiPython } from "react-icons/si";
@@ -14,12 +15,12 @@ export default function Home() {
           Software Engineer building responsive web apps with React, Next.js & WordPress.
         </p>
         <div className="mt-6 flex gap-4">
-          <a href="/projects" className="px-6 py-3 bg-emerald-500 text-black rounded-full shadow hover:bg-sky-600 hover:text-white">
+          <Link href="/projects" className="px-6 py-3 bg-emerald-500 text-black rounded-full shadow hover:bg-sky-600 hover:text-white">
             View Projects
-          </a>
-          <a href="/contact" className="px-6 py-3 border border-sky-600 text-sky-600 rounded-full hover:bg-sky-600 hover:text-white">
+          </Link>
+          <Link href="/contact" className="px-6 py-3 border border-sky-600 text-sky-600 rounded-full hover:bg-sky-600 hover:text-white">
             Contact Me
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -67,9 +68,9 @@ export default function Home() {
           </a>
         </div>
         <div className="mt-15">
-          <a href="/projects" className="px-6 py-3 bg-indigo-600 text-white rounded-full shadow hover:bg-indigo-700">
+          <Link href="/projects" className="px-6 py-3 bg-indigo-600 text-white rounded-full shadow hover:bg-indigo-700">
             See All Projects
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -104,12 +105,10 @@ export default function Home() {
       <section className="py-20 bg-indigo-600 text-white text-center">
         <h2 className="text-5xl font-bold mb-6">Let’s Build Something Amazing</h2>
         <p className="mb-8 text-lg">I’m always open to freelance projects, collaborations, or job opportunities.</p>
-        <a href="/contact" className="px-6 py-3 bg-white text-indigo-600 font-semibold rounded-full shadow hover:bg-gray-100">
+        <Link href="/contact" className="px-6 py-3 bg-white text-indigo-600 font-semibold rounded-full shadow hover:bg-gray-100">
           Contact Me
-        </a>
+        </Link>
       </section>
-
-
     </main >
   );
 }
