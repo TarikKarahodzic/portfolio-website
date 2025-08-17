@@ -45,27 +45,27 @@ export default function Home() {
       <section className="py-35 text-center">
         <h2 className="text-5xl font-bold mb-12">Featured Projects</h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <a href="/projects/barbershop" className="group block bg-gray-100 rounded-xl overflow-hidden shadow hover:shadow-lg">
+          <Link href="#" className="group block bg-gray-100 rounded-xl overflow-hidden shadow hover:shadow-lg">
             <img src="/projects/barbershop.png" alt="Barbershop App" className="w-full h-48 object-cover group-hover:scale-105 transition" />
             <div className="p-4">
-              <h3 className="text-xl font-semibold">Barbershop Booking App</h3>
+              <h3 className="text-xl font-semibold text-black">Barbershop Booking App</h3>
               <p className="text-gray-600">React Native + Supabase</p>
             </div>
-          </a>
-          <a href="/projects/portfolio" className="group block bg-gray-100 rounded-xl overflow-hidden shadow hover:shadow-lg">
-            <img src="/projects/portfolio.png" alt="Portfolio Website" className="w-full h-48 object-cover group-hover:scale-105 transition" />
+          </Link>
+          <Link href="#" className="group block bg-gray-100 rounded-xl overflow-hidden shadow hover:shadow-lg">
+            <img src="/projects/barbershop.png" alt="Barbershop App" className="w-full h-48 object-cover group-hover:scale-105 transition" />
             <div className="p-4">
-              <h3 className="text-xl font-semibold">Portfolio Website</h3>
+              <h3 className="text-xl font-semibold text-black">Portfolio Website</h3>
               <p className="text-gray-600">Next.js + Tailwind</p>
             </div>
-          </a>
-          <a href="/projects/teca" className="group block bg-gray-100 rounded-xl overflow-hidden shadow hover:shadow-lg">
-            <img src="/projects/teca.png" alt="TECA Platform" className="w-full h-48 object-cover group-hover:scale-105 transition" />
+          </Link>
+          <Link href="#" className="group block bg-gray-100 rounded-xl overflow-hidden shadow hover:shadow-lg">
+            <img src="/projects/barbershop.png" alt="Barbershop App" className="w-full h-48 object-cover group-hover:scale-105 transition" />
             <div className="p-4">
-              <h3 className="text-xl font-semibold">TECA Design Platform</h3>
+              <h3 className="text-xl font-semibold text-black">TECA Design Platform</h3>
               <p className="text-gray-600">WordPress + BuddyPress</p>
             </div>
-          </a>
+          </Link>
         </div>
         <div className="mt-15">
           <Link href="/projects" className="px-6 py-3 bg-indigo-600 text-white rounded-full shadow hover:bg-indigo-700">
