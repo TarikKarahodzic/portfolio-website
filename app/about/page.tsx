@@ -74,7 +74,7 @@ export default function Page() {
                   <div className="absolute left-1/2 z-10 -translate-x-1/2">
                     {/* arm from line to card */}
                     <span
-                      className={`absolute top-1/2 -translate-y-1/2 ${isLeft ? "left-3" : "right-3"} h-0.5 w-14 bg-white/40`}
+                      className={`absolute top-1/2 -translate-y-1/2 ${isLeft ? "right-3" : "left-3"} h-0.5 w-14 bg-white/40`}
                       aria-hidden
                     />
                     {/* main dot */}
