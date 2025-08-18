@@ -116,8 +116,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 text-center bg-background px-5">
-        <h2 className="text-5xl font-bold mb-12 text-primary">
+      <section className="py-20 bg-accent text-moss text-center">
+        <h2 className="text-5xl font-bold mb-6">Let’s Build Something Amazing</h2>
+        <p className="mb-8 text-lg">I’m always open to freelance projects, collaborations, or job opportunities.</p>
+        <Link href="/contact" className="px-6 py-3 btn-primary rounded-full">
+          Contact Me
+        </Link>
+      </section>
+
+      <section className="py-20 text-center bg-primary px-5">
+        <h2 className="text-5xl font-bold mb-12 text-charcoal">
           Tech I Work With
         </h2>
         <div className="flex justify-center gap-12 flex-wrap max-w-4xl mx-auto">
@@ -125,14 +133,6 @@ export default function Home() {
             <TechIcon key={index} icon={tech.icon} label={tech.label} color={tech.color} />
           ))}
         </div>
-      </section>
-
-      <section className="py-20 bg-accent text-moss text-center">
-        <h2 className="text-5xl font-bold mb-6">Let’s Build Something Amazing</h2>
-        <p className="mb-8 text-lg">I’m always open to freelance projects, collaborations, or job opportunities.</p>
-        <Link href="/contact" className="px-6 py-3 btn-primary rounded-full">
-          Contact Me
-        </Link>
       </section>
     </main >
   );

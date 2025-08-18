@@ -16,12 +16,12 @@ export default function TechIcon({ icon, label, color }: TechIconProps) {
         className={`
           text-5xl transition-transform duration-200 
           group-hover:scale-110
-          ${color ?? "text-primary"}
+          ${color ?? "text-moss"}
         `}
       >
         {icon}
       </div>
-      <span className="mt-2 text-sm text-accent">{label}</span>
+      <span className="mt-2 text-sm text-moss">{label}</span>
     </div>
   );
 }
