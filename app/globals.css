@@ -1,26 +1,69 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #3E6259;
+  --foreground: #ededed;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-primary: #F4F8F6;
+  --color-moss: #3E6259;
+  --color-accent: #9FBFA7;
+  --color-lighttext: #2A2A2A;
+  --color-charcoal: #2A2A2A;
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #3E6259;
     --foreground: #ededed;
   }
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--background);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.7s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #8BAA92;
+  color: var(--color-primary);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+  padding: 0.75em 1.5em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.7s ease;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  /* Your dark background */
+}
+
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
