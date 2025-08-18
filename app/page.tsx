@@ -23,7 +23,7 @@ export default function Home() {
 
   return (
     <main>
-      <section className="h-screen flex flex-col justify-center items-center text-center">
+      <section className="h-screen flex flex-col justify-center items-center text-center px-5">
         <h1 className="text-5xl font-bold text-primary">Hi, I’m Tarik Karahodzic</h1>
         <p className="mt-2 text-xl text-primary">
           Software Engineer building responsive web apps with React, Next.js & WordPress.
@@ -39,7 +39,7 @@ export default function Home() {
       </section>
 
       <section className="py-40 bg-primary text-center">
-        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-12 text-charcoal">
+        <h2 className="text-5xl font-extrabold tracking-tight mb-12 text-charcoal">
           What I Do
         </h2>
 
@@ -62,8 +62,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-40 text-center">
-        <h2 className="text-5xl font-bold mb-22 text-primary">
+      <section className="py-30 text-center">
+        <h2 className="text-5xl font-bold mb-22 text-primary px-2">
           Featured Projects
         </h2>
 
@@ -93,7 +93,7 @@ export default function Home() {
             href="/projects"
             className="
             inline-block px-6 py-3 rounded-full font-bold 
-            bg-accent text-charcoal
+            bg-accent text-primary
             shadow transition duration-300 ease-in-out 
             hover:text-primary
           "
@@ -103,12 +103,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-40 bg-primary text-center">
-        <h2 className="text-5xl font-bold mb-12 text-charcoal">
+      <section className="py-30 bg-primary text-center">
+        <h2 className="text-5xl font-bold mb-12 text-charcoal px-5">
           What People Say
         </h2>
 
-        <div className="max-w-3xl mx-auto space-y-8">
+        <div className="max-w-3xl mx-auto space-y-8 px-5">
           <TestimonialCard
             text="Tarik is a fast learner and delivers projects with great attention to detail. His frontend skills stand out."
             author="Mentor at OnRush Studio"
@@ -116,7 +116,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 text-center bg-background">
+      <section className="py-20 text-center bg-background px-5">
         <h2 className="text-5xl font-bold mb-12 text-primary">
           Tech I Work With
         </h2>

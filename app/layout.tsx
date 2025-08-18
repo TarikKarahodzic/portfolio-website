@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${spaceGrotesk.className} px-5 pb-5 md:px-0 md:pb-0`}>
+      <body className={`${spaceGrotesk.className} md:px-0 md:pb-0`}>
         <Navbar />
         {children}
       </body>
