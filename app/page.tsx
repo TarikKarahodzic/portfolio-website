@@ -89,7 +89,7 @@ export default function Home() {
         </div>
 
         <div className="mt-16">
-          <a
+          <Link
             href="/projects"
             className="
             inline-block px-6 py-3 rounded-full font-bold 
@@ -99,7 +99,7 @@ export default function Home() {
           "
           >
             See All Projects
-          </a>
+          </Link>
         </div>
       </section>
 
