@@ -9,10 +9,10 @@ const tagStyles: Record<string, { grad: string; text: string; ring: string }> = 
 export default function Page() {
   return (
     <main>
-      <section>
+      <section className="md:px-6">
         <div className="mx-auto max-w-7xl pt-30 pb-26">
-          <h1 className="text-6xl pb-3 text-primary">About me</h1>
-          <p className="text-base">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          <h1 className="text-6xl font-bold pb-3 text-primary">About me</h1>
+          <p className="text-base text-primary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
         </div>
       </section>
 
@@ -45,7 +45,8 @@ export default function Page() {
                     {/* Year + Tag */}
                     <div className="mb-3 flex items-center gap-3">
                       <time className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
-                        {e.year}
+                        {e.start_year}
+                        {e.end_year && e.end_year !== e.start_year ? ` – ${e.end_year}` : !e.end_year ? " – Present" : ""}
                       </time>
 
                       {/* tag chip */}
@@ -61,6 +62,10 @@ export default function Page() {
                     <h3 className="text-lg font-semibold tracking-tight text-neutral-800 dark:text-white">
                       {e.title}
                     </h3>
+
+                    <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
+                      {e.org}
+                    </p>
 
                     <p className="mt-2 text-[15px] leading-7 text-neutral-600 dark:text-neutral-300">
                       {e.description}
