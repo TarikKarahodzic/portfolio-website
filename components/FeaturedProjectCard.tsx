@@ -2,6 +2,7 @@
 'use client';
 
 import Link from "next/link";
+import Image from "next/image"; // ✅ import Next.js Image
 import React from "react";
 
 type FeaturedProjectCardProps = {
@@ -22,15 +23,18 @@ export default function FeaturedProjectCard({ title, desc, image, link }: Featur
         hover:shadow-lg
       "
     >
-      <img
-        src={image}
-        alt={title}
-        className="
-          w-full h-48 object-cover 
-          transition-transform duration-300 
-          group-hover:scale-105
-        "
-      />
+      <div className="relative w-full h-48">
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="
+            object-cover 
+            transition-transform duration-300 
+            group-hover:scale-105
+          "
+        />
+      </div>
       <div className="p-4">
         <h3 className="text-xl font-semibold text-black">
           {title}
