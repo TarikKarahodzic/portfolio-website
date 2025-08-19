@@ -1,18 +1,40 @@
+import { JSX } from "react";
 import { events, Events } from "../../data/events";
+import { FaReact, FaWordpress, FaGithub, FaGraduationCap, FaBriefcase } from "react-icons/fa";
+import { SiNextdotjs, SiTailwindcss, SiSupabase, SiTypescript, SiPython } from "react-icons/si";
+import { MdVolunteerActivism } from "react-icons/md";
 
-const tagStyles: Record<string, { grad: string; text: string; ring: string }> = {
-  "Education": { grad: "from-sky-500 to-indigo-500", text: "text-sky-900", ring: "ring-sky-300/60" },
-  "Work Experience": { grad: "from-emerald-500 to-teal-500", text: "text-emerald-900", ring: "ring-emerald-300/60" },
-  "Volunteering": { grad: "from-amber-500 to-orange-500", text: "text-amber-900", ring: "ring-amber-300/60" },
-};
+const tagStyles: Record<
+  string,
+  { grad: string; text: string; ring: string; icon: JSX.Element }
+> = {
+  "Education": {
+    grad: "from-sky-500 to-indigo-500",
+    text: "text-sky-900",
+    ring: "ring-sky-300/60",
+    icon: <FaGraduationCap />,
+  },
+  "Work Experience": {
+    grad: "from-emerald-500 to-teal-500",
+    text: "text-emerald-900",
+    ring: "ring-emerald-300/60",
+    icon: <FaBriefcase />,
+  },
+  "Volunteering": {
+    grad: "from-amber-500 to-orange-500",
+    text: "text-amber-900",
+    ring: "ring-amber-300/60",
+    icon: <MdVolunteerActivism />,
+  },
+}
 
 export default function Page() {
   return (
     <main>
       <section className="md:px-6">
-        <div className="mx-auto max-w-7xl pt-30 pb-26">
-          <h1 className="text-6xl font-bold pb-3 text-primary">About me</h1>
-          <p className="text-base text-primary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <div className="mx-auto max-w-7xl pt-30 pb-16">
+          <h1 className="text-6xl px-6 font-bold pb-3 text-primary">About me</h1>
+          <p className="text-base px-6 text-primary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
         </div>
       </section>
 
@@ -55,6 +77,7 @@ export default function Page() {
                       >
                         {/* tiny dot */}
                         <span className="h-1.5 w-1.5 rounded-full bg-white/90" />
+                        {color.icon}
                         {e.tags}
                       </span>
                     </div>
@@ -95,6 +118,48 @@ export default function Page() {
             );
           })}
         </ol>
+      </section>
+
+      <section className="py-20 px-6 text-center">
+        <h2 className="text-4xl font-bold text-primary mb-8">Skills & Tools</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-center items-center">
+          {[
+            { icon: <FaReact />, color: 'text-sky-500', label: 'React' },
+            { icon: <SiNextdotjs />, color: 'text-black', label: 'Next.js' },
+            { icon: <SiTailwindcss />, color: 'text-cyan-400', label: 'Tailwind' },
+            { icon: <FaWordpress />, color: 'text-blue-700', label: 'WordPress' },
+            { icon: <SiSupabase />, color: 'text-green-500', label: 'Supabase' },
+            { icon: <SiPython />, color: 'text-yellow-500', label: 'Python' },
+            { icon: <FaGithub />, color: 'text-black', label: 'GitHub' },
+          ].map((tool, i) => (
+            <div
+              key={i}
+              className={`backdrop-blur-lg bg-white/10 dark:bg-white/5 border border-white/20 rounded-xl p-4 flex flex-col items-center transition transform hover:-translate-y-1 hover:shadow-lg`}
+            >
+              <div className={`text-4xl ${tool.color}`}>{tool.icon}</div>
+              <p className="mt-2 text-sm font-medium text-white/80">{tool.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-20 text-center">
+        <h2 className="text-4xl font-bold text-primary mb-8">Languages</h2>
+        <div className="flex justify-center gap-6 flex-wrap">
+          {[
+            { label: "Bosnian – Native" },
+            { label: "English – Advanced (C1)" },
+            { label: "German – Basic (A2)" },
+          ].map((lang, i) => (
+            <span
+              key={i}
+              className="bg-primary/10 backdrop-blur-md border border-white/20 text-white/90 px-5 py-3 rounded-xl flex items-center gap-2 text-lg font-semibold transition hover:-translate-y-1 hover:shadow-lg"
+            >
+              {lang.label}
+            </span>
+          ))}
+        </div>
+
       </section>
     </main>
   );

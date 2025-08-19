@@ -45,7 +45,7 @@ export const events: Events[] = [
     description: "During my Erasmus mobility program in Riga, Latvia, I had the opportunity to study in a dynamic international environment that broadened both my academic knowledge and cultural perspective. Living and learning in Riga allowed me to collaborate with students from diverse backgrounds, exchange ideas and adapt to new educational approaches. Beyond academics, the experience enriched my personal growth improving my communication, adaptability, and problem-solving skills while immersing myself in Latvian culture and building lasting international connections.",
     start_year: 2023,
     end_year: 2023,
-    tags: "Erasmus Mobility",
+    tags: "Education",
     org: "Riga Technical University"
   },
   {
