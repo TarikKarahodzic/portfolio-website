@@ -24,8 +24,8 @@ export default function Home() {
   return (
     <main>
       <section className="h-screen flex flex-col justify-center items-center text-center px-5">
-        <h1 className="text-5xl font-bold text-primary">Hi, I’m Tarik Karahodzic</h1>
-        <p className="mt-2 text-xl text-primary">
+        <h1 className="text-5xl font-bold text-moss">Hi, I’m Tarik Karahodzic</h1>
+        <p className="mt-2 text-xl text-moss">
           Software Engineer building responsive web apps with React, Next.js & WordPress.
         </p>
         <div className="mt-6 flex gap-4">
@@ -63,7 +63,7 @@ export default function Home() {
       </section>
 
       <section className="py-30 text-center">
-        <h2 className="text-5xl font-bold mb-22 text-primary px-2">
+        <h2 className="text-5xl font-bold mb-22 text-moss px-2">
           Featured Projects
         </h2>
 
@@ -93,9 +93,9 @@ export default function Home() {
             href="/projects"
             className="
             inline-block px-6 py-3 rounded-full font-bold 
-            bg-accent text-primary
+            bg-moss text-primary
             shadow transition duration-300 ease-in-out 
-            hover:text-primary
+            hover:bg-primary hover:text-moss
           "
           >
             See All Projects

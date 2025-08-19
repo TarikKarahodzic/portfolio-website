@@ -4,11 +4,15 @@ import { FaReact, FaWordpress, FaGithub, FaGraduationCap, FaBriefcase } from "re
 import { SiNextdotjs, SiTailwindcss, SiSupabase, SiTypescript, SiPython } from "react-icons/si";
 import { MdVolunteerActivism } from "react-icons/md";
 
-const tagStyles: Record<
-  string,
-  { grad: string; text: string; ring: string; icon: JSX.Element }
-> = {
-  "Education": {
+type TagStyle = {
+  grad: string;
+  text: string;
+  ring: string;
+  icon: JSX.Element;
+};
+
+const tagStyles: Record<string, TagStyle> = {
+  Education: {
     grad: "from-sky-500 to-indigo-500",
     text: "text-sky-900",
     ring: "ring-sky-300/60",
@@ -20,25 +24,25 @@ const tagStyles: Record<
     ring: "ring-emerald-300/60",
     icon: <FaBriefcase />,
   },
-  "Volunteering": {
+  Volunteering: {
     grad: "from-amber-500 to-orange-500",
     text: "text-amber-900",
     ring: "ring-amber-300/60",
     icon: <MdVolunteerActivism />,
   },
-}
+};
 
 export default function Page() {
   return (
     <main>
       <section className="md:px-6">
         <div className="mx-auto max-w-7xl pt-30 pb-16">
-          <h1 className="text-6xl px-6 font-bold pb-3 text-primary">About me</h1>
-          <p className="text-base px-6 text-primary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          <h1 className="text-6xl px-6 font-bold pb-3 text-moss">About me</h1>
+          <p className="text-base px-6 text-moss">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
         </div>
       </section>
 
-      <section className="relative mx-auto max-w-6xl px-6 py-24">
+      <section className="relative mx-auto max-w-6xl px-6 py-24 pb-6">
         {/* Center gradient line */}
         <div
           aria-hidden
@@ -53,7 +57,7 @@ export default function Page() {
         <ol className="space-y-24">
           {events.map((e, i) => {
             const isLeft = i % 2 === 0;
-            const color = tagStyles[e.tags] ?? { grad: "from-gray-400 to-gray-600", text: "text-gray-900", ring: "ring-gray-300/60" };
+            const color = tagStyles[e.tags] ?? { grad: "from-gray-400 to-gray-600", text: "text-gray-900", ring: "ring-gray-300/60", icon: <span className="inline-block h-2 w-2 rounded-full bg-white/90" /> };
 
             return (
               <li key={`${e.title}-${i}`} className="relative">
@@ -66,7 +70,7 @@ export default function Page() {
                   >
                     {/* Year + Tag */}
                     <div className="mb-3 flex items-center gap-3">
-                      <time className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
+                      <time className="text-sm font-medium text-charcoal">
                         {e.start_year}
                         {e.end_year && e.end_year !== e.start_year ? ` – ${e.end_year}` : !e.end_year ? " – Present" : ""}
                       </time>
@@ -82,15 +86,15 @@ export default function Page() {
                       </span>
                     </div>
 
-                    <h3 className="text-lg font-semibold tracking-tight text-neutral-800 dark:text-white">
+                    <h3 className="text-2xl font-semibold tracking-tight text-moss dark:moss">
                       {e.title}
                     </h3>
 
-                    <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
+                    <p className="text-sm font-medium text-charcoal">
                       {e.org}
                     </p>
 
-                    <p className="mt-2 text-[15px] leading-7 text-neutral-600 dark:text-neutral-300">
+                    <p className="mt-2 text-[15px] leading-7 text-charcoal/80">
                       {e.description}
                     </p>
 
@@ -120,8 +124,8 @@ export default function Page() {
         </ol>
       </section>
 
-      <section className="py-20 px-6 text-center">
-        <h2 className="text-4xl font-bold text-primary mb-8">Skills & Tools</h2>
+      <section className="py-20 px-6 text-center bg-primary">
+        <h2 className="text-4xl font-bold text-moss mb-8">Skills & Tools</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-center items-center">
           {[
             { icon: <FaReact />, color: 'text-sky-500', label: 'React' },
@@ -134,17 +138,17 @@ export default function Page() {
           ].map((tool, i) => (
             <div
               key={i}
-              className={`backdrop-blur-lg bg-white/10 dark:bg-white/5 border border-white/20 rounded-xl p-4 flex flex-col items-center transition transform hover:-translate-y-1 hover:shadow-lg`}
+              className={`backdrop-blur-lg bg-moss border border-white/20 rounded-xl p-4 flex flex-col items-center transition transform hover:-translate-y-1 hover:shadow-lg`}
             >
               <div className={`text-4xl ${tool.color}`}>{tool.icon}</div>
-              <p className="mt-2 text-sm font-medium text-white/80">{tool.label}</p>
+              <p className="mt-2 text-sm font-medium text-primary">{tool.label}</p>
             </div>
           ))}
         </div>
       </section>
 
       <section className="py-20 text-center">
-        <h2 className="text-4xl font-bold text-primary mb-8">Languages</h2>
+        <h2 className="text-4xl font-bold text-moss mb-8">Languages</h2>
         <div className="flex justify-center gap-6 flex-wrap">
           {[
             { label: "Bosnian – Native" },
@@ -153,7 +157,7 @@ export default function Page() {
           ].map((lang, i) => (
             <span
               key={i}
-              className="bg-primary/10 backdrop-blur-md border border-white/20 text-white/90 px-5 py-3 rounded-xl flex items-center gap-2 text-lg font-semibold transition hover:-translate-y-1 hover:shadow-lg"
+              className="bg-moss backdrop-blur-md border border-white/20 text-white/90 px-5 py-3 rounded-xl flex items-center gap-2 text-lg font-semibold transition hover:-translate-y-1 hover:shadow-lg"
             >
               {lang.label}
             </span>

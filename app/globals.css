@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #3E6259;
+  --background: #9FBFA7;
   --foreground: #ededed;
 }
-
+/* 3E6259 */
 @theme inline {
   --color-primary: #F4F8F6;
   --color-moss: #3E6259;
@@ -15,10 +15,10 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
-
+ 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #3E6259;
+    --background: #9FBFA7;
     --foreground: #ededed;
   }
 }
@@ -29,8 +29,8 @@ body {
 }
 
 .btn-primary {
-  background-color: var(--color-primary);
-  color: var(--background);
+  background-color: var(--color-moss);
+  color: var(--color-primary);
   border: none;
   font-weight: 600;
   cursor: pointer;
@@ -45,8 +45,8 @@ body {
 
 .btn-secondary {
   background-color: transparent;
-  color: var(--color-accent);
-  border: 2px solid var(--color-accent);
+  color: var(--color-moss);
+  border: 2px solid var(--color-moss);
   padding: 0.75em 1.5em;
   font-weight: 500;
   cursor: pointer;
@@ -57,6 +57,7 @@ body {
 .btn-secondary:focus {
   background-color: var(--color-accent);
   color: var(--color-primary);
+  border-color: var(--color-primary);
   /* Your dark background */
 }
 

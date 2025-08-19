@@ -13,7 +13,7 @@ export default function Navbar() {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 
         <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">My Portfolio</span>
+          <span className="self-center text-2xl font-semibold whitespace-nowrap text-moss">My Portfolio</span>
         </Link>
 
         <div className="flex md:order-2 space-x-3 rtl:space-x-reverse">
@@ -40,8 +40,8 @@ export default function Navbar() {
               <Link
                 href="/"
                 className={`block py-2 px-3 rounded md:p-0 text-xl ${pathname === "/"
-                  ? "text-accent md:bg-transparent"
-                  : "hover:bg-accent md:hover:bg-transparent dark:text-white dark:hover:text-accent"
+                  ? "text-primary md:bg-transparent"
+                  : "hover:bg-primary md:hover:bg-transparent dark:text-moss dark:hover:text-primary"
                   }`}
               >
                 Home
@@ -51,8 +51,8 @@ export default function Navbar() {
               <Link
                 href="/about"
                 className={`block py-2 px-3 rounded md:p-0 text-xl ${pathname === "/about"
-                  ? "text-white md:bg-transparent"
-                  : "hover:bg-accent md:hover:bg-transparent dark:text-white dark:hover:text-accent"
+                  ? "text-primary md:bg-transparent"
+                  : "hover:bg-primary md:hover:bg-transparent dark:text-moss dark:hover:text-primary"
                   }`}
               >
                 About me
@@ -62,8 +62,8 @@ export default function Navbar() {
               <Link
                 href="/projects"
                 className={`block py-2 px-3 rounded md:p-0 text-xl ${pathname === "/projects"
-                  ? "text-white md:bg-transparent"
-                  : "hover:bg-accent md:hover:bg-transparent dark:text-white dark:hover:text-accent"
+                  ? "text-primary md:bg-transparent"
+                  : "hover:bg-primary md:hover:bg-transparent dark:text-moss dark:hover:text-primary"
                   }`}
               >
                 Projects

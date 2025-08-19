@@ -1,8 +1,7 @@
-// components/FeaturedProjectCard.tsx
 'use client';
 
 import Link from "next/link";
-import Image from "next/image"; // ✅ import Next.js Image
+import Image from "next/image";
 import React from "react";
 
 type FeaturedProjectCardProps = {
@@ -18,7 +17,7 @@ export default function FeaturedProjectCard({ title, desc, image, link }: Featur
       href={link}
       className="
         group block rounded-xl overflow-hidden 
-        bg-accent
+        bg-moss
         shadow transition 
         hover:shadow-lg
       "
@@ -36,10 +35,10 @@ export default function FeaturedProjectCard({ title, desc, image, link }: Featur
         />
       </div>
       <div className="p-4">
-        <h3 className="text-xl font-semibold text-black">
+        <h3 className="text-xl font-semibold text-primary">
           {title}
         </h3>
-        <p className="text-charcoal">{desc}</p>
+        <p className="text-accent">{desc}</p>
       </div>
     </Link>
   );
