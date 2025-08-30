@@ -6,7 +6,7 @@ export default function ProjectCard({ p }: { p: Project }) {
   return (
     <Link
       href={`/projects/${p.slug}`}
-      className="group block rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 hover:shadow-lg transition"
+      className="group block rounded-xl overflow-hidden border border-moss bg-moss hover:shadow-lg transition"
     >
       <div className="relative aspect-[16/9]">
         <Image
@@ -20,15 +20,15 @@ export default function ProjectCard({ p }: { p: Project }) {
       </div>
       <div className="p-4">
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-semibold">{p.title}</h3>
-          <span className="text-xs text-gray-500">{p.year}</span>
+          <h3 className="text-lg font-semibold text-primary">{p.title}</h3>
+          <span className="text-xs text-accent">{p.year}</span>
         </div>
-        <p className="mt-2 text-sm text-gray-600 dark:text-gray-300 line-clamp-2">
+        <p className="mt-2 text-sm text-primary/90 line-clamp-2">
           {p.description}
         </p>
-        <div className="mt-3 flex flex-wrap gap-2">
+        <div className="mt-4 flex flex-wrap gap-2">
           {p.tags.map((t) => (
-            <span key={t} className="text-xs px-2 py-1 rounded bg-gray-100 dark:bg-gray-800">
+            <span key={t} className="text-xs px-2 py-1 rounded bg-accent text-charcoal">
               {t}
             </span>
           ))}

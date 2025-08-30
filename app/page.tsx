@@ -75,15 +75,15 @@ export default function Home() {
             link="#"
           />
           <FeaturedProjectCard
-            title="Portfolio Website"
-            desc="Next.js + Tailwind"
-            image="/projects/portfolio.png"
+            title="FabLab Website"
+            desc="WordPress + ACF"
+            image="/images/projects/fablab.png"
             link="#"
           />
           <FeaturedProjectCard
             title="TECA Design Platform"
             desc="WordPress + BuddyPress"
-            image="/projects/teca.png"
+            image="/images/projects/tecalab.jpg"
             link="#"
           />
         </div>

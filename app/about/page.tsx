@@ -1,8 +1,9 @@
 import { JSX } from "react";
 import { events, Events } from "../../data/events";
-import { FaReact, FaWordpress, FaGithub, FaGraduationCap, FaBriefcase } from "react-icons/fa";
-import { SiNextdotjs, SiTailwindcss, SiSupabase, SiTypescript, SiPython } from "react-icons/si";
+import { FaReact, FaWordpress, FaGithub, FaPhp, FaHtml5, FaCss3Alt, FaJsSquare, FaGraduationCap, FaBriefcase } from "react-icons/fa";
+import { SiNextdotjs, SiTailwindcss, SiSupabase, SiTypescript, SiPython, SiDotnet, SiSharp } from "react-icons/si";
 import { MdVolunteerActivism } from "react-icons/md";
+import TechIcon from "../../components/TechIcon";
 
 type TagStyle = {
   grad: string;
@@ -10,6 +11,22 @@ type TagStyle = {
   ring: string;
   icon: JSX.Element;
 };
+
+const techStack = [
+  { icon: <FaHtml5 />, label: "HTML5", color: "text-orange-500" },
+  { icon: <FaCss3Alt />, label: "CSS3", color: "text-blue-500" },
+  { icon: <SiPython />, label: "Python", color: "text-yellow-500" },
+  { icon: <FaJsSquare />, label: "JavaScript", color: "text-yellow-400" },
+  { icon: <SiNextdotjs />, label: "Next.js", color: "text-black" },
+  { icon: <FaReact />, label: "React", color: "text-sky-500" },
+  { icon: <SiTailwindcss />, label: "Tailwind", color: "text-cyan-400" },
+  { icon: <FaWordpress />, label: "WordPress", color: "text-blue-700" },
+  { icon: <SiSupabase />, label: "Supabase", color: "text-green-500" },
+  { icon: <FaPhp />, label: "PHP", color: "text-indigo-600" },
+  { icon: <SiSharp />, label: "C#", color: "text-purple-600" },
+  { icon: <SiDotnet />, label: ".NET", color: "text-violet-700" },
+  { icon: <FaGithub />, label: "GitHub", color: "text-gray-700" },
+];
 
 const tagStyles: Record<string, TagStyle> = {
   Education: {
@@ -38,11 +55,11 @@ export default function Page() {
       <section className="md:px-6">
         <div className="mx-auto max-w-7xl pt-30 pb-16">
           <h1 className="text-6xl px-6 font-bold pb-3 text-moss">About me</h1>
-          <p className="text-base px-6 text-moss">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          <p className="text-base px-6 text-charcoal">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
         </div>
       </section>
 
-      <section className="relative mx-auto max-w-6xl px-6 py-24 pb-6">
+      <section className="relative mx-auto max-w-6xl px-6 py-14 pb-16">
         {/* Center gradient line */}
         <div
           aria-hidden
@@ -94,7 +111,7 @@ export default function Page() {
                       {e.org}
                     </p>
 
-                    <p className="mt-2 text-[15px] leading-7 text-charcoal/80">
+                    <p className="mt-2 text-[15px] leading-7 text-charcoal">
                       {e.description}
                     </p>
 
@@ -124,25 +141,13 @@ export default function Page() {
         </ol>
       </section>
 
-      <section className="py-20 px-6 text-center bg-primary">
-        <h2 className="text-4xl font-bold text-moss mb-8">Skills & Tools</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-center items-center">
-          {[
-            { icon: <FaReact />, color: 'text-sky-500', label: 'React' },
-            { icon: <SiNextdotjs />, color: 'text-black', label: 'Next.js' },
-            { icon: <SiTailwindcss />, color: 'text-cyan-400', label: 'Tailwind' },
-            { icon: <FaWordpress />, color: 'text-blue-700', label: 'WordPress' },
-            { icon: <SiSupabase />, color: 'text-green-500', label: 'Supabase' },
-            { icon: <SiPython />, color: 'text-yellow-500', label: 'Python' },
-            { icon: <FaGithub />, color: 'text-black', label: 'GitHub' },
-          ].map((tool, i) => (
-            <div
-              key={i}
-              className={`backdrop-blur-lg bg-moss border border-white/20 rounded-xl p-4 flex flex-col items-center transition transform hover:-translate-y-1 hover:shadow-lg`}
-            >
-              <div className={`text-4xl ${tool.color}`}>{tool.icon}</div>
-              <p className="mt-2 text-sm font-medium text-primary">{tool.label}</p>
-            </div>
+      <section className="py-20 text-center bg-primary px-5">
+        <h2 className="text-5xl font-bold mb-12 text-charcoal">
+          Skills & Tools
+        </h2>
+        <div className="flex justify-center gap-12 flex-wrap max-w-4xl mx-auto">
+          {techStack.map((tech, index) => (
+            <TechIcon key={index} icon={tech.icon} label={tech.label} color={tech.color} />
           ))}
         </div>
       </section>
@@ -154,6 +159,7 @@ export default function Page() {
             { label: "Bosnian – Native" },
             { label: "English – Advanced (C1)" },
             { label: "German – Basic (A2)" },
+            { label: "French – Basic (A1)" },
           ].map((lang, i) => (
             <span
               key={i}

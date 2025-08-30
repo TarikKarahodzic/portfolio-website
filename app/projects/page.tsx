@@ -12,8 +12,8 @@ export default function ProjectsPage() {
 
   return (
     <main className="min-h-[calc(100vh-64px)] px-6 sm:pt-20 md:px-12 lg:px-20">
-      <h1 className="text-4xl font-bold">Projects</h1>
-      <p className="mt-2 text-gray-600 dark:text-gray-300">
+      <h1 className="text-4xl font-bold text-moss">Projects</h1>
+      <p className="mt-2 text-charcoal">
         A selection of my work across web, mobile, and AI.
       </p>
 
