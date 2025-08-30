@@ -2,23 +2,16 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { projects } from "../../../data/projects";
 
-// ---- helpers to support both Promise and non-Promise params ----
 type Params = { slug: string };
-type ParamsArg = { params: Params } | { params: Promise<Params> };
-
-async function resolveParams(arg: ParamsArg): Promise<Params> {
-  const p: any = (arg as any).params;
-  return typeof p?.then === "function" ? await p : (p as Params);
-}
-// ----------------------------------------------------------------
 
 export async function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-// Works whether your framework passes a Promise or a plain object
-export async function generateMetadata(arg: ParamsArg) {
-  const { slug } = await resolveParams(arg);
+export async function generateMetadata(
+  { params }: { params: Promise<Params> }
+) {
+  const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
   if (!project) return {};
   return {
@@ -27,9 +20,10 @@ export async function generateMetadata(arg: ParamsArg) {
   };
 }
 
-// Works with both Promise and non-Promise params
-export default async function Page(arg: ParamsArg) {
-  const { slug } = await resolveParams(arg);
+export default async function Page(
+  { params }: { params: Promise<Params> }
+) {
+  const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
   if (!project) return notFound();
 
