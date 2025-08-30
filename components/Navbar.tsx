@@ -90,36 +90,45 @@ export default function Navbar() {
         aria-hidden={!isOpen}
       >
         <div
-          className={`absolute right-0 top-0 h-[100svh] w-full bg-white dark:bg-gray-900
-                shadow-xl will-change-transform transition-transform duration-300 ease-out
-                flex flex-col
-                ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+          className={`
+    absolute inset-0 right-0
+    w-full
+    h-[100dvh] min-h-[100svh] min-h-screen
+    pb-[env(safe-area-inset-bottom)]
+    bg-[#0b1220] text-white
+    shadow-xl will-change-transform
+    transition-transform duration-300 ease-out
+    flex flex-col
+    ${isOpen ? 'translate-x-0' : 'translate-x-full'}
+  `}
           role="dialog"
           aria-modal="true"
         >
           {/* Header row with X */}
-          <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700 bg-white/90 dark:bg-gray-900/90 backdrop-blur">
-            <span className="text-xl font-semibold text-white">Menu</span>
-            <button onClick={() => setIsOpen(false)} className="p-2 rounded" aria-label="Close menu">
+          <div className="flex items-center justify-between p-4 border-b border-gray-700">
+            <span className="text-xl font-semibold">Menu</span>
+            <button onClick={() => setIsOpen(false)} aria-label="Close menu">
               <svg className="w-7 h-7" viewBox="0 0 24 24">
                 <path d="M6 6l12 12M18 6l-12 12" stroke="white" strokeWidth="2" strokeLinecap="round" />
               </svg>
             </button>
           </div>
 
-          {/* Centered links WITH staggered animation */}
+          {/* Centered links */}
           <div className="flex-1 flex flex-col items-center justify-center gap-10">
             {navLinks.map(({ href, label }, i) => (
               <div
                 key={href}
-                className={`transform transition-all duration-500
-                      ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
-                style={{ transitionDelay: `${i * 100}ms` }}  // <-- stagger
+                className={`transform transition-all duration-500 ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+                  }`}
+                style={{ transitionDelay: `${i * 100}ms` }}
               >
                 <Link
                   href={href}
                   onClick={() => setIsOpen(false)}
-                  className={`text-3xl font-semibold transition-colors ${pathname === href ? 'text-primary' : 'text-gray-800 dark:text-gray-200 hover:text-primary'
+                  className={`text-3xl font-semibold transition-colors ${pathname === href
+                      ? 'text-primary'
+                      : 'text-gray-200 hover:text-primary'
                     }`}
                 >
                   {label}
@@ -129,7 +138,7 @@ export default function Navbar() {
           </div>
 
           {/* Bottom copyright */}
-          <div className="pb-6 text-center text-sm text-gray-500">
+          <div className="pb-6 text-center text-sm text-gray-400">
             © <span suppressHydrationWarning>{new Date().getFullYear()}</span> Tarik Karahodzic
           </div>
         </div>
