@@ -45,7 +45,6 @@ export default function ContactSection() {
     }
   };
 
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -99,10 +98,10 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="bg-white dark:bg-gray-900 py-20 px-6 md:px-20">
+    <section id="contact" className="bg-moss py-15 px-6 md:px-20 rounded-2xl">
       <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-gray-900 dark:text-white">Contact Me</h2>
-        <p className="mt-4 text-gray-600 dark:text-gray-300">
+        <h2 className="text-4xl font-bold text-accent">Contact Me</h2>
+        <p className="mt-4 text-white/80">
           Got a question or proposal? Send me a message.
         </p>
       </div>
@@ -120,7 +119,7 @@ export default function ContactSection() {
         />
 
         <div>
-          <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+          <label className="block mb-2 text-lg font-medium text-white/80">
             Your Name
           </label>
           <input
@@ -135,7 +134,7 @@ export default function ContactSection() {
         </div>
 
         <div>
-          <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+          <label className="block mb-2 text-lg font-medium text-white/80">
             Your Email
           </label>
           <input
@@ -151,7 +150,7 @@ export default function ContactSection() {
         </div>
 
         <div>
-          <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+          <label className="block mb-2 text-lg font-medium text-white/80">
             Your Message
           </label>
           <textarea
@@ -169,7 +168,7 @@ export default function ContactSection() {
         <button
           type="submit"
           disabled={status === 'sending'}
-          className="w-full bg-blue-700 hover:bg-blue-800 disabled:opacity-60 text-white font-semibold py-3 rounded-lg transition-colors duration-300"
+          className="w-full bg-accent hover:bg-accent/80 disabled:opacity-60 text-moss font-semibold py-3 rounded-lg transition-colors duration-300"
         >
           {status === 'sending' ? 'Sending…' : 'Send Message'}
         </button>
