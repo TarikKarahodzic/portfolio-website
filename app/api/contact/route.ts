@@ -20,7 +20,7 @@ export async function POST(request: Request) {
 
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.EMAIL_FROM || "Portfolio <onboarding@resend.dev>";
-  const to = process.env.CONTACT_TO || "karahodzictarik@outlook.com";
+  const to = process.env.CONTACT_TO || "tariktare@live.com";
 
   if (!apiKey) {
     return NextResponse.json({ success: false, error: "RESEND_API_KEY missing" }, { status: 500 });
