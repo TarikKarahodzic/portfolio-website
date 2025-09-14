@@ -11,8 +11,8 @@ export default function ProjectsPage() {
   const allTags = Array.from(new Set(projects.flatMap(p => p.tags))).sort();
 
   return (
-    <main className="min-h-[calc(100vh-64px)] mx-auto max-w-7xl pt-25">
-      <h1 className="text-4xl font-bold text-moss">Projects</h1>
+    <main className="min-h-[calc(100vh-64px)] mx-auto max-w-7xl pt-25 px-5 pb-20">
+      <h1 className="text-6xl font-bold text-moss">Projects</h1>
       <p className="mt-2 text-charcoal">
         A selection of my work across web and mobile.
       </p>
