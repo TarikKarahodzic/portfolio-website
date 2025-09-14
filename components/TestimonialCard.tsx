@@ -1,20 +1,22 @@
 'use client';
 
 import React from "react";
+import type { Testimonial } from "../data/testimonitals";
 
-type TestimonialCardProps = {
-  text: string;
-  author: string;
-}
-
-export default function TestimonialCard({ text, author }: TestimonialCardProps) {
+export default function TestimonialCard({ t }: { t: Testimonial }) {
   return (
-    <blockquote
-      className="p-6 bg-primary shadow rounded-xl
-      transition-all duration-200 hover:shadow-lg"
-    >
-      <p className="text-lg italic text-charcoal">&quot;{text}&quot;</p>
-      <footer className="mt-4 text-sm font-semibold text-black">— {author}</footer>
-    </blockquote>
+    <figure className="mx-auto w-full rounded-2xl bg-white p-8 shadow ring-1 ring-black/5">
+      <div
+        key={t.name + t.quote}
+        className="transition-opacity duration-500 ease-out opacity-100"
+      >
+        <blockquote className="text-center">
+          <p className="italic text-charcoal">“{t.quote}”</p>
+          <figcaption className="mt-6 text-sm font-semibold text-black">
+            — {t.name} <span className="font-normal text-black/60">| {t.role}</span>
+          </figcaption>
+        </blockquote>
+      </div>
+    </figure>
   );
 }

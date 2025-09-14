@@ -11,19 +11,13 @@ export default function ProjectsPage() {
   const allTags = Array.from(new Set(projects.flatMap(p => p.tags))).sort();
 
   return (
-    <main className="min-h-[calc(100vh-64px)] px-6 sm:pt-20 md:px-12 lg:px-20">
+    <main className="min-h-[calc(100vh-64px)] mx-auto max-w-7xl pt-25">
       <h1 className="text-4xl font-bold text-moss">Projects</h1>
       <p className="mt-2 text-charcoal">
-        A selection of my work across web, mobile, and AI.
+        A selection of my work across web and mobile.
       </p>
 
       <FilterBar allTags={allTags} />
-
-      <section className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((p) => (
-          <ProjectCard key={p.slug} p={p} />
-        ))}
-      </section>
     </main>
   );
 }

@@ -1,6 +1,6 @@
 import { JSX } from "react";
 import { events, Events } from "../../data/events";
-import { FaReact, FaWordpress, FaGithub, FaPhp, FaHtml5, FaCss3Alt, FaJsSquare, FaGraduationCap, FaBriefcase } from "react-icons/fa";
+import { FaReact, FaWordpress, FaGithub, FaPhp, FaHtml5, FaCss3Alt, FaJsSquare, FaGraduationCap, FaBriefcase, FaProjectDiagram } from "react-icons/fa";
 import { SiNextdotjs, SiTailwindcss, SiSupabase, SiTypescript, SiPython, SiDotnet, SiSharp } from "react-icons/si";
 import { MdVolunteerActivism } from "react-icons/md";
 import TechIcon from "../../components/TechIcon";
@@ -46,6 +46,12 @@ const tagStyles: Record<string, TagStyle> = {
     text: "text-amber-900",
     ring: "ring-amber-300/60",
     icon: <MdVolunteerActivism />,
+  },
+  Project: {
+    grad: "from-purple-500 to-fuchsia-500",
+    text: "text-purple-900",
+    ring: "ring-purple-300/60",
+    icon: <FaProjectDiagram />,
   },
 };
 
@@ -120,7 +126,7 @@ export default function Page() {
                   </article>
 
                   {/* Center dot (+ connector arm) */}
-                  <div className="absolute left-1/2 z-10 -translate-x-1/2">
+                  <div className="absolute left-1/2 z-10 -translate-x-1/2 hidden md:block">
                     {/* arm from line to card */}
                     <span
                       className={`absolute top-1/2 -translate-y-1/2 ${isLeft ? "right-3" : "left-3"} h-0.5 w-14 bg-white/40`}
@@ -141,7 +147,7 @@ export default function Page() {
         </ol>
       </section>
 
-      <section className="py-20 text-center bg-primary px-5">
+      <section className="py-20 text-center bg-primary px-7">
         <h2 className="text-5xl font-bold mb-12 text-charcoal">
           Skills & Tools
         </h2>

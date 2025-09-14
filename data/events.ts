@@ -21,7 +21,7 @@ export const events: Events[] = [
     description: "I've built a mobile application with React Native for frontend and Supabase for backend. Testing was doen with Expo. This was my Bachelor's degree thesis.",
     start_year: 2024,
     end_year: 2024,
-    tags: "Work Experience",
+    tags: "Project",
     org: "Freelance"
   },
   {

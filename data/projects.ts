@@ -31,12 +31,12 @@ export const projects: Project[] = [
     links: { demo: "https://tecalab.eu" }
   },
   {
-    slug: "barbershop-app",
-    title: "Barbershop App",
-    description: "Mobile booking app built with React Native + Supabase.",
+    slug: "vectrum-site",
+    title: "Vectrum Website",
+    description: "Website for transport company based in Sarajevo. The site is made with HTML, CSS & JS.",
     year: 2024,
-    tags: ["React Native", "Supabase", "Mobile"],
-    image: "/images/projects/barbershop.jpg",
-    links: { repo: "https://github.com/tarikkarahodzic" }
+    tags: ["HTML", "CSS", "JavaScript"],
+    image: "/images/projects/vectrum.png",
+    links: { demo: "www.vectrum.ba" }
   },
 ];

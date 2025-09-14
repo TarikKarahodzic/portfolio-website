@@ -28,7 +28,7 @@ export default async function Page(
   if (!project) return notFound();
 
   return (
-    <main className="px-6 pt-24 pb-10 md:pt-28 lg:pt-32">
+    <main className="mx-auto max-w-7xl pt-25">
       <div className="mx-auto w-full max-w-5xl">
         <h1 className="text-3xl md:text-4xl font-bold text-moss">{project.title}</h1>
         <p className="mt-2 text-charcoal">{project.description}</p>

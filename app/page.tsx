@@ -6,8 +6,8 @@ import Card from "../components/Card";
 import { FaReact, FaWordpress, FaGithub } from "react-icons/fa";
 import { SiNextdotjs, SiTailwindcss, SiSupabase, SiTypescript, SiPython } from "react-icons/si";
 import FeaturedProjectCard from "../components/FeaturedProjectCard";
-import TestimonialCard from "../components/TestimonialCard";
 import TechIcon from "../components/TechIcon";
+import TestimonialsRotator from "../components/TestimonialsRotator";
 
 const techStack = [
   { icon: <FaReact />, label: "React", color: "text-sky-500" },
@@ -69,9 +69,9 @@ export default function Home() {
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
           <FeaturedProjectCard
-            title="Barbershop Booking App"
-            desc="React Native + Supabase"
-            image="/projects/barbershop.png"
+            title="Vectrum Website"
+            desc="HTML + CSS + JS"
+            image="/images/projects/vectrum.png"
             link="#"
           />
           <FeaturedProjectCard
@@ -103,16 +103,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-30 bg-primary text-center">
-        <h2 className="text-5xl font-bold mb-12 text-charcoal px-5">
-          What People Say
-        </h2>
-
+      <section className="py-20 px-2 bg-primary text-center">
         <div className="max-w-3xl mx-auto space-y-8 px-5">
-          <TestimonialCard
-            text="Tarik is a fast learner and delivers projects with great attention to detail. His frontend skills stand out."
-            author="Mentor at OnRush Studio"
-          />
+          <TestimonialsRotator interval={7500} fadeMs={500} />
         </div>
       </section>
 
