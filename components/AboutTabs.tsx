@@ -105,11 +105,9 @@ export default function AboutTabs() {
         {activeTab === "about" && (
           <div className="flex flex-col lg:flex-row items-start gap-10">
             {/* Left: text content */}
-            <div className="flex-1 max-w-5xl bg-white rounded-lg p-8">
-              <h2 className="text-3xl font-bold mb-4 text-center">
-                Software Developer
-              </h2>
-              <p className="text-gray-700 leading-relaxed mb-8 text-center">
+            <div className="flex-1 w-full max-w-full bg-white rounded-lg p-4 sm:p-6 md:p-8 mx-auto text-center overflow-auto">
+              <h2 className="text-3xl font-bold mb-4">Software Developer</h2>
+              <p className="text-gray-700 leading-relaxed mb-8">
                 Recent Information Technology graduate with a comprehensive
                 skill set in full-stack web development (frontend & backend),
                 mobile development, software development, and testing. I am a
