@@ -1,6 +1,6 @@
 import { projects } from "../../data/projects";
 import ProjectCard from "../../components/ProjectCard";
-import FilterBar from "../projects/FilterBar";
+// import FilterBar from "../projects/FilterBar";
 
 export const metadata = {
   title: "Projects | Your Name",
@@ -8,7 +8,7 @@ export const metadata = {
 };
 
 export default function ProjectsPage() {
-  const allTags = Array.from(new Set(projects.flatMap(p => p.tags))).sort();
+  // const allTags = Array.from(new Set(projects.flatMap(p => p.tags))).sort();
 
   return (
     <main className="min-h-[calc(100vh-64px)] mx-auto max-w-7xl pt-25 px-5 pb-20">
@@ -17,7 +17,13 @@ export default function ProjectsPage() {
         A selection of my work across web and mobile.
       </p>
 
-      <FilterBar allTags={allTags} />
+      <section className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {projects.map((project) => (
+          <ProjectCard key={project.slug} p={project} />
+        ))}
+      </section>
+
+      {/* <FilterBar allTags={allTags} /> */}
     </main>
   );
 }
