@@ -300,7 +300,7 @@ export default function AboutTabs() {
                   The mobility was an Erasmus+ Student Exchange project
                   conducted in Riga, Latvia. This is a prestigious European
                   Union program that funds study and training periods abroad.
-                  RTU's Computer Systems programs generally focus on software
+                  RTU$apos;s Computer Systems programs generally focus on software
                   engineering, computer systems development, database
                   technologies and potentially fundamentals of AI.
                 </p>
