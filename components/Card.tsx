@@ -14,7 +14,7 @@ export default function Card({ icon, title, desc }: CardProps) {
     <div
       className="
         group rounded-2xl p-8 md:p-10
-        bg-accent
+        bg-accent h-full
         ring-1 ring-black/5 shadow-sm
         transition-all duration-200
         hover:-translate-y-1 hover:shadow-lg hover:ring-black/10

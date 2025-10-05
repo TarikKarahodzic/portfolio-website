@@ -1,32 +1,69 @@
 'use client';
 
 import Link from "next/link";
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import Card from "../components/Card";
-import { FaReact, FaWordpress, FaGithub } from "react-icons/fa";
-import { SiNextdotjs, SiTailwindcss, SiSupabase, SiTypescript, SiPython } from "react-icons/si";
+import { FaReact, FaWordpress } from "react-icons/fa";
+import { SiTailwindcss } from "react-icons/si";
 import FeaturedProjectCard from "../components/FeaturedProjectCard";
-import TechIcon from "../components/TechIcon";
 import TestimonialsRotator from "../components/TestimonialsRotator";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const techStack = [
-  { icon: <FaReact />, label: "React", color: "text-sky-500" },
-  { icon: <SiNextdotjs />, label: "Next.js", color: "text-black" },
-  { icon: <SiTailwindcss />, label: "Tailwind", color: "text-cyan-400" },
-  { icon: <FaWordpress />, label: "WordPress", color: "text-blue-700" },
-  { icon: <SiSupabase />, label: "Supabase", color: "text-green-500" },
-  { icon: <SiPython />, label: "Python", color: "text-yellow-500" },
-  { icon: <FaGithub />, label: "GitHub", color: "text-gray-700" },
-];
+// Register ScrollTrigger plugin
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export default function Home() {
+  useLayoutEffect(() => {
+    // Context for GSAP to use
+    const ctx = gsap.context(() => {
+      // Animate sections
+      gsap.utils.toArray('section').forEach((section: any, index: number) => {
+        // Different animation for the last section (contact)
+        if (index === gsap.utils.toArray('section').length - 1) {
+          gsap.from(section, {
+            opacity: 0,
+            y: 30,
+            duration: 0.8,
+            scrollTrigger: {
+              trigger: section,
+              start: 'top bottom-=100', // Triggers earlier
+              end: 'bottom bottom',
+              toggleActions: 'play none none none'
+            }
+          });
+        } else {
+          gsap.from(section, {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            scrollTrigger: {
+              trigger: section,
+              start: 'top center+=100',
+              toggleActions: 'play none none none'
+            }
+          });
+        }
+      });
+    });
+
+    // Cleanup function
+    return () => {
+      // Kill all ScrollTriggers
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      // Kill all GSAP animations in this context
+      ctx.revert();
+    };
+  }, []);
 
   return (
     <main>
       <section className="h-screen flex flex-col justify-center items-center text-center px-5">
         <h1 className="text-5xl font-bold text-moss">Hi, I’m Tarik Karahodzic</h1>
         <p className="mt-2 text-xl text-moss">
-          Software Engineer building responsive web apps with React, Next.js & WordPress.
+          Software Engineer building responsive web apps with React, Next.js & other technologies.
         </p>
         <div className="mt-6 flex gap-4">
           <Link href="/contact" className="px-6 py-3 btn-primary rounded-full">
@@ -116,17 +153,10 @@ export default function Home() {
           Contact Me
         </Link>
       </section>
-
-      <section className="py-20 text-center bg-primary px-5">
-        <h2 className="text-5xl font-bold mb-12 text-charcoal">
-          Tech I Work With
-        </h2>
-        <div className="flex justify-center gap-12 flex-wrap max-w-4xl mx-auto">
-          {techStack.map((tech, index) => (
-            <TechIcon key={index} icon={tech.icon} label={tech.label} color={tech.color} />
-          ))}
-        </div>
-      </section>
     </main >
   );
 }
+
+/* 
+  LAYERED PINNING
+*/

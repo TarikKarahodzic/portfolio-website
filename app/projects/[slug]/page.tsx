@@ -4,22 +4,6 @@ import { projects } from "../../../data/projects";
 
 type Params = { slug: string };
 
-export async function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
-}
-
-export async function generateMetadata(
-  { params }: { params: Promise<Params> }
-) {
-  const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
-  if (!project) return {};
-  return {
-    title: `${project.title} | Projects`,
-    description: project.description,
-  };
-}
-
 export default async function Page(
   { params }: { params: Promise<Params> }
 ) {
@@ -28,7 +12,7 @@ export default async function Page(
   if (!project) return notFound();
 
   return (
-    <main className="mx-auto max-w-7xl pt-25 px-6">
+    <main className="mx-auto max-w-7xl py-25 px-6">
       <div className="mx-auto w-full max-w-5xl">
         <h1 className="text-3xl md:text-4xl font-bold text-moss">{project.title}</h1>
         <p className="mt-2 text-charcoal">{project.description}</p>

@@ -103,7 +103,7 @@ export default function AboutTabs() {
       {/* Tab Content */}
       <div className="mt-12">
         {activeTab === "about" && (
-          <div className="flex flex-col lg:flex-row items-start gap-10">
+          <div className="flex flex-col lg:flex-row items-start gap-10 tab-content">
             {/* Left: text content */}
             <div className="flex-1 w-full max-w-full bg-white rounded-lg p-4 sm:p-6 md:p-8 mx-auto text-center overflow-auto">
               <h2 className="text-3xl font-bold mb-4">Software Developer</h2>
@@ -150,7 +150,7 @@ export default function AboutTabs() {
         )}
 
         {activeTab === "experience" && (
-          <div>
+          <div className="tab-content">
             {/* Grid 2x2 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               <div className="p-6 rounded-lg shadow bg-white">
@@ -259,7 +259,7 @@ export default function AboutTabs() {
         )}
 
         {activeTab === "education" && (
-          <div>
+          <div className="tab-content">
             {/* Grid 2x2 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <div className="p-6 rounded-lg shadow bg-white">
@@ -298,7 +298,7 @@ export default function AboutTabs() {
                   The mobility was an Erasmus+ Student Exchange project
                   conducted in Riga, Latvia. This is a prestigious European
                   Union program that funds study and training periods abroad.
-                  RTU$apos;s Computer Systems programs generally focus on software
+                  RTU&apos;s Computer Systems programs generally focus on software
                   engineering, computer systems development, database
                   technologies and potentially fundamentals of AI.
                 </p>
@@ -308,7 +308,7 @@ export default function AboutTabs() {
         )}
 
         {activeTab === "skills" && (
-          <div className="bg-white rounded-lg p-6">
+          <div className="bg-white rounded-lg p-6 tab-content">
             <div className="flex justify-center gap-12 flex-wrap mx-auto">
               {techStack.map((tech, index) => (
                 <TechIcon
