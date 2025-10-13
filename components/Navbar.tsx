@@ -31,11 +31,19 @@ export default function Navbar() {
 
   const desktopLink = (href: string) =>
     `text-lg transition-colors ${
-      pathname === href
-        ? "text-primary font-semibold border-b-2 border-primary pb-1"
-        : scrolled
-        ? "text-accent hover:text-primary"
-        : "text-white/80 hover:text-accent"
+      pathname === "/" 
+        ? // Styles when on home page (with silk background)
+          href === pathname
+            ? "text-moss font-semibold" // active link on home
+            : scrolled
+              ? "text-white/90 hover:text-moss"
+              : "text-white/90 hover:text-moss" // non-active links on home
+        : // Styles for other pages
+          pathname === href
+            ? "text-primary font-semibold border-b-2 border-primary pb-1" // active link on other pages
+            : scrolled
+              ? "text-white/90 hover:text-primary"
+              : "text-charcoal/70 hover:text-primary" // non-active links on other pages
     }`;
 
   return (

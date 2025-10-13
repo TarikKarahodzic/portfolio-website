@@ -161,7 +161,7 @@ export default function AboutTabs() {
                   WordPress Developer
                 </h3>
                 <p className="text-gray-600 text-sm">
-                  FabLab | Sarajevo, Bosnia and Herzegovina
+                  FabLab (Freelance) | Sarajevo, Bosnia and Herzegovina
                 </p>
                 <p className="text-gray-700 mt-4">
                   Successfully converting design mockups from Figma into
@@ -181,10 +181,10 @@ export default function AboutTabs() {
                   <CalendarDays className="mr-1" /> 09.2025 - 10.2025
                 </div>
                 <h3 className="font-semibold text-xl pb-1">
-                  Backend Developer
+                  Backend Developer Intern
                 </h3>
                 <p className="text-gray-600 text-sm">
-                  Pontis Technology (Internship) | Zagreb, Croatia
+                  Pontis Technology | Zagreb, Croatia
                 </p>
                 <p className="text-gray-700 mt-4">
                   I focused on full-stack development, building Web API from
@@ -261,7 +261,7 @@ export default function AboutTabs() {
         {activeTab === "education" && (
           <div className="tab-content">
             {/* Grid 2x2 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               <div className="p-6 rounded-lg shadow bg-white">
                 <div className="flex items-center text-moss text-sm font-bold pb-1">
                   <CalendarDays className="mr-1" /> 2021 - 2024
