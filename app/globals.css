@@ -61,6 +61,24 @@ body {
   /* Your dark background */
 }
 
+.btn-secondaryhero {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  padding: 0.75em 1.5em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.7s ease;
+}
+
+.btn-secondaryhero:hover,
+.btn-secondaryhero:focus {
+  background-color: var(--color-moss);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  /* Your dark background */
+}
+
 .card {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
